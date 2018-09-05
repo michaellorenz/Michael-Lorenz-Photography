@@ -1,28 +1,32 @@
-// List group
-.media  {
-  .media-left {
-    padding: $list-group-padding;
-    img {
-      box-shadow: $z-depth-1;
-    }
+// List Groups
+
+@mixin list-group-item-variant($state, $background, $color) {
+  .list-group-item-#{$state} {
+    color: $color;
+    background-color: $background;
+
+    // [converter] extracted a&, button& to a.list-group-item-#{$state}, button.list-group-item-#{$state}
   }
-}
-.list-group {
-  .list-group-item {
-    &:first-child {
-      border-top-left-radius: $border-radius-base;
-      border-top-right-radius: $border-radius-base;
+
+  a.list-group-item-#{$state},
+  button.list-group-item-#{$state} {
+    color: $color;
+
+    .list-group-item-heading {
+      color: inherit;
     }
-    &:last-child {
-      border-bottom-left-radius: $border-radius-base;
-      border-bottom-right-radius: $border-radius-base;
+
+    &:hover,
+    &:focus {
+      color: $color;
+      background-color: darken($background, 5%);
     }
-  }
-  a,
-  button {
-    transition: $list-group-transition;
-    &:hover {
-      transition: $list-group-transition;
+    &.active,
+    &.active:hover,
+    &.active:focus {
+      color: #fff;
+      background-color: $color;
+      border-color: $color;
     }
   }
 }
