@@ -99,10 +99,6 @@ h1 {
     background-color: transparent;
 }
 
-#headertext {
-    margin-left: -150px;
-    margin-top: -2px;
-}
 .navbar-fixed-top {
      position: absolute!important;
 }
